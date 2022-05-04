@@ -1,9 +1,21 @@
+/*MAPS*/
+$redes:(
+   color:white,
+);
+
+/*MIXIN*/
+@mixin tamanio($anchor,$altor) 
+{
+    height: $altor;
+    width: $anchor;
+}
+
 /*FOOTER*/
 footer
 {
     position: relative;
-    width: 100%;
-    height: auto;
+    /*COLOCANDO MIXIN*/
+    @include tamanio(100%, auto);
     padding: 50px 100px;
     background: $background-principal;
     font-size: 15px;
@@ -19,7 +31,8 @@ footer .containerfoot
 footer .containerfoot .sec h2
 {
   position: relative;
-  color: rgb(253, 253, 253);
+  /*COLOCANDO MAPS*/
+  color: map-get($redes,color);
    font-weight: 500;
    margin-bottom: 15px;
 }
@@ -30,14 +43,16 @@ footer .containerfoot .sec h2::before
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 50px;
-    height: 2px;
-    background: rgb(243, 243, 243);
+    @include tamanio(50px,2px);
+    @each $var, $colores in $redes {
+        color: $colores;
+        
+    }
 }
 
 footer .containerfoot .sec p
 {
-    color: white;
+    color: map-get($redes,color);
 
 }
 .sci
@@ -55,8 +70,7 @@ footer .containerfoot .sec p
 .sci li a
 {
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    @include tamanio(48px,48px );
     background: rgb(100, 98, 98);
     display: grid;
     align-content: center;

@@ -41,7 +41,7 @@ section:nth-child(even) {
   background-position: 100%; }
 
 nav {
-  background-color: black;
+  background: black;
   justify-content: space-between;
   font-size: x-large;
   align-items: center; }
@@ -53,7 +53,7 @@ header .logo {
   width: 50px;
   height: 50px; }
 
-.h3index {
+.h3index, .h2bruxx {
   margin-left: 5rem;
   background: linear-gradient(90deg, #D9BC9A, #8C3C1F, #592316, #BF5F56, #4E3026, #0D0D0D);
   background-size: 200%;
@@ -72,21 +72,8 @@ header .logo {
     background-position: 400%; } }
 
 .h2bruxx {
-  background: linear-gradient(90deg, #D9BC9A, #8C3C1F, #592316, #BF5F56, #4E3026, #0D0D0D);
-  background-size: 200%;
   font-size: 20px;
-  letter-spacing: 5px;
-  font-weight: 600;
-  word-spacing: 5px;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation: animate 10s linear infinite; }
-
-@keyframes animate {
-  0% {
-    background-position: 0%; }
-  100% {
-    background-position: 400%; } }
+  margin-left: 0rem; }
 
 header .navbar-toggler {
   color: white;
@@ -102,7 +89,7 @@ header .navbar .nav-link {
 /*COLOR QUE LE DAMOS CUANDO APRETAMOS*/
 header .navbar .nav-link.active,
 header .navbar .nav-link:hover {
-  color: #000000;
+  color: black;
   background-color: #fcb900; }
 
 .home .home-slider .slide {
@@ -133,11 +120,14 @@ header .icons .menu-bars {
 .imgindex {
   width: 100%; }
 
+/*MAPS*/
+/*MIXIN*/
 /*FOOTER*/
 footer {
   position: relative;
-  width: 100%;
+  /*COLOCANDO MIXIN*/
   height: auto;
+  width: 100%;
   padding: 50px 100px;
   background: black;
   font-size: 15px; }
@@ -150,7 +140,8 @@ footer .containerfoot {
 
 footer .containerfoot .sec h2 {
   position: relative;
-  color: #fdfdfd;
+  /*COLOCANDO MAPS*/
+  color: white;
   font-weight: 500;
   margin-bottom: 15px; }
 
@@ -159,9 +150,9 @@ footer .containerfoot .sec h2::before {
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 50px;
   height: 2px;
-  background: #f3f3f3; }
+  width: 50px;
+  color: white; }
 
 footer .containerfoot .sec p {
   color: white; }
@@ -176,8 +167,8 @@ footer .containerfoot .sec p {
 
 .sci li a {
   display: inline-block;
-  width: 48px;
   height: 48px;
+  width: 48px;
   background: #646262;
   display: grid;
   align-content: center;
@@ -247,18 +238,18 @@ footer .containerfoot .sec p {
     grid-template-columns: repeat(1, 1fr); } }
 
 /*FORMULARIO*/
-.containerform {
-  border: 2px solid #000000;
-  padding: 5rem; }
-
-label {
-  font-size: 20px; }
-
 .h1form {
   font-family: 'Alfa Slab One', cursive;
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
   padding-bottom: 20px; }
+
+/*ANIDACION */
+.containerform {
+  border: 2px solid black;
+  padding: 5rem; }
+  .containerform label {
+    font-size: 20px; }
 
 /* UBICACION */
 .h1ubi {
@@ -283,6 +274,12 @@ label {
   text-align: center;
   padding-bottom: 20px; }
 
+@media (max-width: 715px) {
+  .h1lomitos {
+    font-size: 4rem;
+    text-align: center; } }
+
+/*ANIDACION */
 .row .col-sm-6 {
   padding-bottom: 3rem; }
   .row .col-sm-6 h4 {
@@ -326,7 +323,7 @@ label {
   font-size: 15px;
   color: black; }
 
-/*VIDEOS*/
+/* VIDEOS */
 .h1videos {
   font-family: 'Alfa Slab One', cursive;
   font-size: 6rem;
@@ -339,6 +336,5 @@ label {
 
 @media (max-width: 715px) {
   .h1videos {
-    padding-top: 30rem;
     font-size: 4rem;
     text-align: center; } }
